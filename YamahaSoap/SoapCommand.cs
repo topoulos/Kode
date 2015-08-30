@@ -13,12 +13,12 @@ namespace YamahaClient
             var url = "http://192.168.0.186/YamahaRemoteControl/ctrl";
             var body = command;
 
-            XmlDocument soapEnvelopeXml = CreateSoapEnvelope(body);
-            HttpWebRequest webRequest = CreateWebRequest(url);
+            var soapEnvelopeXml = CreateSoapEnvelope(body);
+            var webRequest = CreateWebRequest(url);
             InsertSoapEnvelopeIntoWebRequest(soapEnvelopeXml, webRequest);
 
             // begin async call to web request.
-            IAsyncResult asyncResult = webRequest.BeginGetResponse(null, null);
+            var asyncResult = webRequest.BeginGetResponse(null, null);
 
             // suspend this thread until call is complete. You might want to
             // do something usefull here like update your UI.
@@ -38,7 +38,7 @@ namespace YamahaClient
 
         private HttpWebRequest CreateWebRequest(string url)
         {
-            HttpWebRequest webRequest = (HttpWebRequest)WebRequest.Create(url);
+            var webRequest = (HttpWebRequest)WebRequest.Create(url);
             webRequest.ContentType = "text/xml;charset=\"utf-8\"";
             webRequest.Accept = "text/xml";
             webRequest.Method = "POST";
@@ -47,7 +47,7 @@ namespace YamahaClient
 
         private XmlDocument CreateSoapEnvelope(string body)
         {
-            XmlDocument soapEnvelop = new XmlDocument();
+            var soapEnvelop = new XmlDocument();
             soapEnvelop.LoadXml(@body);
             return soapEnvelop;
         }

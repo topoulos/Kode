@@ -6,13 +6,17 @@ namespace KodiClient
 {
     public class RpcCommand : IRpcCommand
     {
+        private string ipAddress;
         public IVolumeReturnEnvelope VolumeReturnMessage { get; set; }
-
+        public RpcCommand(string ipAddress)
+        {
+            this.ipAddress = ipAddress;
+        }
         public void SendCommand(string command)
         {
             using (var client = new HttpClient())
             {
-                client.BaseAddress = new Uri("http://192.168.0.222:8080/");
+                client.BaseAddress = new Uri(ipAddress + @"/");
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 

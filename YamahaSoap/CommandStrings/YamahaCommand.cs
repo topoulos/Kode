@@ -1,9 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using Interfaces;
+﻿using Interfaces;
 
 namespace YamahaClient
 {
@@ -23,7 +18,6 @@ namespace YamahaClient
             {
                 return XmlTemplateHeader + @"<YAMAHA_AV cmd=""PUT""><Main_Zone><Input_Sel>HDMI2</Input_Sel></Input></Main_Zone></YAMAHA_AV>";
             }
-
         }
 
         public string HDMI3
@@ -32,7 +26,6 @@ namespace YamahaClient
             {
                 return XmlTemplateHeader + @"<YAMAHA_AV cmd=""PUT""><Main_Zone><Input_Sel>HDMI3</Input_Sel></Input></Main_Zone></YAMAHA_AV>";
             }
-
         }
 
         public string HDMI4
@@ -41,7 +34,6 @@ namespace YamahaClient
             {
                 return XmlTemplateHeader + @"<YAMAHA_AV cmd=""PUT""><Main_Zone><Input_Sel>HDMI4</Input_Sel></Input></Main_Zone></YAMAHA_AV>";
             }
-
         }
 
         public string Off
@@ -50,7 +42,6 @@ namespace YamahaClient
             {
                 return XmlTemplateHeader + @"<YAMAHA_AV cmd=""PUT""><Main_Zone><Power_Control><Power>Standby</Power></Power_Control></Main_Zone></YAMAHA_AV>";
             }
-
         }
 
         public string On
@@ -59,7 +50,6 @@ namespace YamahaClient
             {
                 return XmlTemplateHeader + @"<YAMAHA_AV cmd=""PUT""><Main_Zone><Power_Control><Power>On</Power></Power_Control></Main_Zone></YAMAHA_AV>";
             }
-
         }
 
         public string VAUX
@@ -68,7 +58,6 @@ namespace YamahaClient
             {
                 return XmlTemplateHeader + @"<YAMAHA_AV cmd=""PUT""><Main_Zone><Input_Sel>V-AUX</Input_Sel></Input></Main_Zone></YAMAHA_AV>";
             }
-
         }
 
         public string VolDown
@@ -77,7 +66,6 @@ namespace YamahaClient
             {
                 return XmlTemplateHeader + @"<YAMAHA_AV cmd=""PUT""><Main_Zone><Volume><Lvl><Val>Down</Val></Lvl></Volume></Main_Zone></YAMAHA_AV>";
             }
-
         }
 
         public string VolMute
@@ -86,7 +74,6 @@ namespace YamahaClient
             {
                 return XmlTemplateHeader + @"<YAMAHA_AV cmd=""PUT""><Main_Zone><Volume><Mute>On</Mute></Volume></Main_Zone></YAMAHA_AV>";
             }
-
         }
 
         public string VolUp
@@ -95,8 +82,8 @@ namespace YamahaClient
             {
                 return XmlTemplateHeader + @"<YAMAHA_AV cmd=""PUT""><Main_Zone><Volume><Lvl><Val>Up</Val></Lvl></Volume></Main_Zone></YAMAHA_AV>";
             }
-
         }
+
         private string XmlTemplateHeader = @"<?xml version =""1.0"" encoding=""utf-8""?>";
     }
 }

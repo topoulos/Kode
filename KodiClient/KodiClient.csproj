@@ -55,8 +55,13 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Models\VolumeReturnEnvelope.cs" />
     <Compile Include="RpcCommand.cs" />
+    <Compile Include="SetupConfig.cs" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\ConfigEditor\ConfigEditor.csproj">
+      <Project>{ea8ebb7e-d76b-405f-b0b8-f83f5a93755b}</Project>
+      <Name>ConfigEditor</Name>
+    </ProjectReference>
     <ProjectReference Include="..\Interfaces\Interfaces.csproj">
       <Project>{df1c6cec-5daf-4753-a01e-7a66038e1a59}</Project>
       <Name>Interfaces</Name>

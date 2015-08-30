@@ -1,23 +1,24 @@
-﻿using System;
+﻿using KodiClient;
+using System;
 using System.Windows.Forms;
-using Interfaces;
-using KodiClient;
 using YamahaClient;
 
 namespace Kode.WF
 {
     public partial class frmMain : Form
     {
-        Mediator mediator;
+        private Mediator mediator;
+
         public frmMain()
         {
             InitializeComponent();
-            IRpcCommand rpcCommand       = new RpcCommand();
-            IKodi kodi                   = new Kodi(rpcCommand);
-            IYamahaCommand yamahaCommand = new YamahaCommand();
-            ISoapCommand soapCommand     = new SoapCommand();
-            IAVReceiver avReceiver       = new AVReceiver(yamahaCommand,soapCommand);
-            mediator                     = new Mediator(kodi, avReceiver);
+            var config        = new SetupConfig();
+            var rpcCommand    = new RpcCommand(config.GetKodiIP());
+            var kodi          = new Kodi(rpcCommand);
+            var yamahaCommand = new YamahaCommand();
+            var soapCommand   = new SoapCommand();
+            var avReceiver    = new AVReceiver(yamahaCommand, soapCommand);
+            mediator          = new Mediator(kodi, avReceiver);
 
             mediator.Register(tbVolume);
         }
@@ -69,7 +70,7 @@ namespace Kode.WF
 
         private void btnOptions_Click(object sender, EventArgs e)
         {
-            Form frmOptions = new frmOptions();
+            var frmOptions = new frmOptions();
             frmOptions.ShowDialog();
         }
     }
