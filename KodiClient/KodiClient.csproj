@@ -48,7 +48,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ini.cs" />
     <Compile Include="Input.cs" />
     <Compile Include="Kodi.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
