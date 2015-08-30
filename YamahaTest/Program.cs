@@ -13,14 +13,14 @@ namespace YamahaTest
     {
         static void Main(string[] args)
         {
-            var kodi= new Kodi();
-            kodi.VolumeToFull();
+            //var kodi= new Kodi();
+            //kodi.VolumeToFull();
             
-            var receiver = new AVReceiver();
-            receiver.VolumeUp();
-            receiver.VolumeUp();
-            receiver.VolumeUp();
-            Console.ReadKey();
+            //var receiver = new AVReceiver();
+            //receiver.VolumeUp();
+            //receiver.VolumeUp();
+            //receiver.VolumeUp();
+            //Console.ReadKey();
         }
     }
 }

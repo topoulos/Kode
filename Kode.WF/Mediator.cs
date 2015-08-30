@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Forms;
+﻿using System.Windows.Forms;
 using Interfaces;
+using System.Collections.Generic;
 
 namespace Kode.WF
 {
@@ -12,50 +8,12 @@ namespace Kode.WF
     {
         IKodi kodi;
         IAVReceiver avReceiver;
+        TrackBar VolumeBar;
 
         public Mediator(IKodi kodi, IAVReceiver avReceiver)
         {
             this.kodi = kodi;
             this.avReceiver = avReceiver;
-        }
-
-        public Button UpButton;
-        public Button DownButton;
-        public Button LeftButton;
-        public Button RightButton;
-        public Button SelectButton;
-        public Button BackButton;
-        public Button HomeButton;
-        public TrackBar VolumeBar;
-
-        public void Register(Button btn)
-        {
-            switch (btn.Name)
-            {
-                case "btnUp":
-                    UpButton = btn;
-                    break;
-                case "btnDown":
-                    DownButton = btn;
-                    break;
-                case "btnLeft":
-                    LeftButton = btn;
-                    break;
-                case "btnRight":
-                    RightButton = btn;
-                    break;
-                case "btnBack":
-                    BackButton = btn;
-                    break;
-                case "btnSelect":
-                    SelectButton = btn;
-                    break;
-                case "btnHome":
-                    HomeButton = btn;
-                    break;
-                default:
-                    break;
-            }
 
         }
 

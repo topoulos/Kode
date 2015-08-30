@@ -13,6 +13,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kode.WF", "Kode.WF\Kode.WF.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{DF1C6CEC-5DAF-4753-A01E-7A66038E1A59}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigEditor", "ConfigEditor\ConfigEditor.csproj", "{EA8EBB7E-D76B-405F-B0B8-F83F5A93755B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -39,6 +41,10 @@ Global
 		{DF1C6CEC-5DAF-4753-A01E-7A66038E1A59}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{DF1C6CEC-5DAF-4753-A01E-7A66038E1A59}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{DF1C6CEC-5DAF-4753-A01E-7A66038E1A59}.Release|Any CPU.Build.0 = Release|Any CPU
+		{EA8EBB7E-D76B-405F-B0B8-F83F5A93755B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{EA8EBB7E-D76B-405F-B0B8-F83F5A93755B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{EA8EBB7E-D76B-405F-B0B8-F83F5A93755B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{EA8EBB7E-D76B-405F-B0B8-F83F5A93755B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

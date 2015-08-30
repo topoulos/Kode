@@ -4,7 +4,6 @@
     {
         void PowerOff();
         void PowerOn();
-        void SendCommand(string command);
         void VolumeDown();
         void VolumeUp();
     }

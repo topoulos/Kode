@@ -41,7 +41,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="AVReceiver.cs" />
+    <Compile Include="Ini.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SoapCommand.cs" />
     <Compile Include="YamahaCommand.cs" />
   </ItemGroup>
   <ItemGroup>

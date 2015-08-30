@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             this.tbVolume = new System.Windows.Forms.TrackBar();
+            this.btnOptions = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.btnBack = new System.Windows.Forms.Button();
             this.btnSelect = new System.Windows.Forms.Button();
@@ -50,6 +51,16 @@
             this.tbVolume.TabIndex = 6;
             this.tbVolume.TickFrequency = 10;
             this.tbVolume.Scroll += new System.EventHandler(this.tbVolume_Scroll);
+            // 
+            // btnOptions
+            // 
+            this.btnOptions.Image = global::Kode.WF.Properties.Resources.gear;
+            this.btnOptions.Location = new System.Drawing.Point(304, 3);
+            this.btnOptions.Name = "btnOptions";
+            this.btnOptions.Size = new System.Drawing.Size(23, 23);
+            this.btnOptions.TabIndex = 8;
+            this.btnOptions.UseVisualStyleBackColor = true;
+            this.btnOptions.Click += new System.EventHandler(this.btnOptions_Click);
             // 
             // btnHome
             // 
@@ -134,7 +145,8 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
-            this.ClientSize = new System.Drawing.Size(339, 261);
+            this.ClientSize = new System.Drawing.Size(330, 261);
+            this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.btnHome);
             this.Controls.Add(this.tbVolume);
             this.Controls.Add(this.btnBack);
@@ -162,6 +174,7 @@
         private System.Windows.Forms.Button btnBack;
         private System.Windows.Forms.TrackBar tbVolume;
         private System.Windows.Forms.Button btnHome;
+        private System.Windows.Forms.Button btnOptions;
     }
 }
 
