@@ -1,11 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Net.Http;
-using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using Interfaces;
+﻿using Interfaces;
 
 namespace KodiClient
 {
@@ -17,38 +10,46 @@ namespace KodiClient
 
         public Kodi(IRpcCommand rpcCommand)
         {
-            input       = new KodiInputCommand();
+            input = new KodiInputCommand();
             application = new KodiApplicationCommand();
-            this.rpcCommand  = rpcCommand;
+            this.rpcCommand = rpcCommand;
         }
+
         public void VolumeToHalf()
         {
             rpcCommand.SendCommand(application.SetVolumeHalf);
         }
+
         public void VolumeToFull()
         {
             rpcCommand.SendCommand(application.SetVolumeFull);
         }
+
         public void Up()
         {
             rpcCommand.SendCommand(input.Up);
         }
+
         public void Down()
         {
             rpcCommand.SendCommand(input.Down);
         }
+
         public void Left()
         {
             rpcCommand.SendCommand(input.Left);
         }
+
         public void Right()
         {
             rpcCommand.SendCommand(input.Right);
         }
+
         public void Back()
         {
             rpcCommand.SendCommand(input.Back);
         }
+
         public void Select()
         {
             rpcCommand.SendCommand(input.Select);
@@ -58,6 +59,7 @@ namespace KodiClient
         {
             rpcCommand.SendCommand(application.SetVolumeMute);
         }
+
         public int GetVolumeLevel()
         {
             rpcCommand.SendCommand(application.GetVolume);

@@ -1,18 +1,12 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
 using System.Net.Http;
 using System.Net.Http.Headers;
-using System.Text;
-using System.Threading.Tasks;
-using Interfaces;
 
 namespace KodiClient
 {
     public class RpcCommand : IRpcCommand
     {
         public IVolumeReturnEnvelope VolumeReturnMessage { get; set; }
-
 
         public void SendCommand(string command)
         {
@@ -29,6 +23,5 @@ namespace KodiClient
                 }
             }
         }
-
     }
 }
