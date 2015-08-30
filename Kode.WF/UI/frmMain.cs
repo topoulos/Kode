@@ -12,8 +12,8 @@ namespace Kode.WF
         public frmMain()
         {
             InitializeComponent();
-
-            IKodi kodi                   = new Kodi();
+            IRpcCommand rpcCommand       = new RpcCommand();
+            IKodi kodi                   = new Kodi(rpcCommand);
             IYamahaCommand yamahaCommand = new YamahaCommand();
             ISoapCommand soapCommand     = new SoapCommand();
             IAVReceiver avReceiver       = new AVReceiver(yamahaCommand,soapCommand);

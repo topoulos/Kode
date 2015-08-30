@@ -44,7 +44,12 @@
     <Compile Include="IIniReader.cs" />
     <Compile Include="IIniWriter.cs" />
     <Compile Include="IKodi.cs" />
+    <Compile Include="IKodiInputCommand.cs" />
+    <Compile Include="IRpcCommand.cs" />
     <Compile Include="ISoapCommand.cs" />
+    <Compile Include="IVolumeResult.cs" />
+    <Compile Include="IVolumeReturnEnvelope.cs" />
+    <Compile Include="IKodiApplicationCommand.cs" />
     <Compile Include="IYamahaCommand.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

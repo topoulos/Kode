@@ -11,81 +11,67 @@ namespace KodiClient
 {
     public class Kodi : IKodi
     {
-        private Input input;
-        private Application application;
-        private VolumeReturnEnvelope volumenReturnMessage;
+        private KodiInputCommand input;
+        private KodiApplicationCommand application;
+        private IRpcCommand rpcCommand;
 
-        public Kodi()
+        public Kodi(IRpcCommand rpcCommand)
         {
-            input = new Input();
-            application = new Application();
+            input       = new KodiInputCommand();
+            application = new KodiApplicationCommand();
+            this.rpcCommand  = rpcCommand;
         }
         public void VolumeToHalf()
         {
-            SendCommand(application.SetVolumeHalf);
+            rpcCommand.SendCommand(application.SetVolumeHalf);
         }
         public void VolumeToFull()
         {
-            SendCommand(application.SetVolumeFull);
+            rpcCommand.SendCommand(application.SetVolumeFull);
         }
         public void Up()
         {
-            SendCommand(input.Up);
+            rpcCommand.SendCommand(input.Up);
         }
         public void Down()
         {
-            SendCommand(input.Down);
+            rpcCommand.SendCommand(input.Down);
         }
         public void Left()
         {
-            SendCommand(input.Left);
+            rpcCommand.SendCommand(input.Left);
         }
         public void Right()
         {
-            SendCommand(input.Right);
+            rpcCommand.SendCommand(input.Right);
         }
         public void Back()
         {
-            SendCommand(input.Back);
+            rpcCommand.SendCommand(input.Back);
         }
         public void Select()
         {
-            SendCommand(input.Select);
+            rpcCommand.SendCommand(input.Select);
         }
 
         public void VolumeToMute()
         {
-            SendCommand(application.SetVolumeMute);
+            rpcCommand.SendCommand(application.SetVolumeMute);
         }
         public int GetVolumeLevel()
         {
-            SendCommand(application.GetVolume);
-            return volumenReturnMessage.Result.Volume;
-        }
-        public void SendCommand(string command)
-        {
-            using (var client = new HttpClient())
-            {
-                client.BaseAddress = new Uri("http://192.168.0.222:8080/");
-                client.DefaultRequestHeaders.Accept.Clear();
-                client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
-
-                HttpResponseMessage response = client.GetAsync(command).Result;
-                if (response.IsSuccessStatusCode)
-                {
-                    volumenReturnMessage =  response.Content.ReadAsAsync<VolumeReturnEnvelope>().Result;
-                }
-            }
+            rpcCommand.SendCommand(application.GetVolume);
+            return rpcCommand.VolumeReturnMessage.Result.Volume;
         }
 
         public void SetVolume(int level)
         {
-            SendCommand(application.SetVolumeAt(level));
+            rpcCommand.SendCommand(application.SetVolumeAt(level));
         }
 
         public void Home()
         {
-            SendCommand(input.Home);
+            rpcCommand.SendCommand(input.Home);
         }
     }
 }

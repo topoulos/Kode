@@ -8,7 +8,6 @@
         void Right();
         void Select();
         void Home();
-        void SendCommand(string command);
         void Up();
         void VolumeToFull();
         void VolumeToHalf();
