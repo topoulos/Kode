@@ -58,7 +58,6 @@
     <Compile Include="UI\frmOptions.Designer.cs">
       <DependentUpon>frmOptions.cs</DependentUpon>
     </Compile>
-    <Compile Include="Ini.cs" />
     <Compile Include="Mediators\Mediator.cs" />
     <Compile Include="Mediators\OptionsMediator.cs" />
     <Compile Include="Program.cs" />
@@ -115,21 +114,21 @@
     <None Include="Resources\circle.png" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\ConfigEditor\ConfigEditor.csproj">
+    <ProjectReference Include="..\ConfigEditor\Kode.Config.csproj">
       <Project>{ea8ebb7e-d76b-405f-b0b8-f83f5a93755b}</Project>
-      <Name>ConfigEditor</Name>
+      <Name>Kode.Config</Name>
     </ProjectReference>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+    <ProjectReference Include="..\Interfaces\Kode.Interface.csproj">
       <Project>{df1c6cec-5daf-4753-a01e-7a66038e1a59}</Project>
-      <Name>Interfaces</Name>
+      <Name>Kode.Interface</Name>
     </ProjectReference>
-    <ProjectReference Include="..\KodiClient\KodiClient.csproj">
+    <ProjectReference Include="..\KodiClient\Kode.KodiClient.csproj">
       <Project>{1727cd62-8ceb-4264-897d-4604b5713c65}</Project>
-      <Name>KodiClient</Name>
+      <Name>Kode.KodiClient</Name>
     </ProjectReference>
-    <ProjectReference Include="..\YamahaSoap\YamahaClient.csproj">
+    <ProjectReference Include="..\YamahaSoap\Kode.YamahaClient.csproj">
       <Project>{b9d0dd96-739d-47bc-95f2-d4722eb9e2ed}</Project>
-      <Name>YamahaClient</Name>
+      <Name>Kode.YamahaClient</Name>
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>

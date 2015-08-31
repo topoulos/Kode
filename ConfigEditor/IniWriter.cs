@@ -1,8 +1,8 @@
 ﻿using Nini.Config;
-using Interfaces;
+using Kode.Interfaces;
 
 
-namespace ConfigEditor
+namespace Kode.ConfigEditor
 {
     public class IniWriter : IIniWriter
     {

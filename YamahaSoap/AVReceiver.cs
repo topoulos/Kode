@@ -1,6 +1,6 @@
-﻿using Interfaces;
+﻿using Kode.Interfaces;
 
-namespace YamahaClient
+namespace Kode.YamahaClient
 {
     public class AVReceiver : IAVReceiver
     {

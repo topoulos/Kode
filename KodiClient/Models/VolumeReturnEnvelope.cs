@@ -1,4 +1,4 @@
-﻿namespace KodiClient
+﻿namespace Kode.KodiClient.Models
 {
     public class VolumeReturnEnvelope : IVolumeReturnEnvelope
     {

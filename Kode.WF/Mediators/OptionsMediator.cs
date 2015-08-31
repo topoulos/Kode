@@ -1,8 +1,8 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
-using Interfaces;
+using Kode.Interfaces;
 
-namespace Kode.WF
+namespace Kode.WF.Mediators
 {
     class OptionsMediator
     {

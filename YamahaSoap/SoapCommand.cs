@@ -1,10 +1,10 @@
-﻿using Interfaces;
+﻿using Kode.Interfaces;
 using System;
 using System.IO;
 using System.Net;
 using System.Xml;
 
-namespace YamahaClient
+namespace Kode.YamahaClient
 {
     public class SoapCommand : ISoapCommand
     {

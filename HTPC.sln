@@ -3,17 +3,17 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.23107.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YamahaTest", "YamahaTest\YamahaTest.csproj", "{ECB944C3-DFE8-40B1-9BE6-88EDBC4F303A}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kode.CMDTest", "YamahaTest\Kode.CMDTest.csproj", "{ECB944C3-DFE8-40B1-9BE6-88EDBC4F303A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "YamahaClient", "YamahaSoap\YamahaClient.csproj", "{B9D0DD96-739D-47BC-95F2-D4722EB9E2ED}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kode.YamahaClient", "YamahaSoap\Kode.YamahaClient.csproj", "{B9D0DD96-739D-47BC-95F2-D4722EB9E2ED}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "KodiClient", "KodiClient\KodiClient.csproj", "{1727CD62-8CEB-4264-897D-4604B5713C65}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kode.KodiClient", "KodiClient\Kode.KodiClient.csproj", "{1727CD62-8CEB-4264-897D-4604B5713C65}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kode.WF", "Kode.WF\Kode.WF.csproj", "{E8526188-CFBD-4995-8B65-D10217EEAA6F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Interfaces", "Interfaces\Interfaces.csproj", "{DF1C6CEC-5DAF-4753-A01E-7A66038E1A59}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kode.Interface", "Interfaces\Kode.Interface.csproj", "{DF1C6CEC-5DAF-4753-A01E-7A66038E1A59}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ConfigEditor", "ConfigEditor\ConfigEditor.csproj", "{EA8EBB7E-D76B-405F-B0B8-F83F5A93755B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kode.Config", "ConfigEditor\Kode.Config.csproj", "{EA8EBB7E-D76B-405F-B0B8-F83F5A93755B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

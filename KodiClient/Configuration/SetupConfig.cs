@@ -1,11 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-using ConfigEditor;
+﻿using Kode.ConfigEditor;
 
-namespace KodiClient
+namespace Kode.KodiClient.Configuration
 {
     public class SetupConfig
     {

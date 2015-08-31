@@ -1,8 +1,10 @@
 ﻿using System;
 using System.Net.Http;
 using System.Net.Http.Headers;
+using Kode.Interfaces;
+using Kode.KodiClient.Models;
 
-namespace KodiClient
+namespace Kode.KodiClient
 {
     public class RpcCommand : IRpcCommand
     {

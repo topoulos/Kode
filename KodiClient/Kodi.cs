@@ -1,6 +1,7 @@
-﻿using Interfaces;
+﻿using Kode.Interfaces;
+using Kode.KodiClient.CommandStrings;
 
-namespace KodiClient
+namespace Kode.KodiClient
 {
     public class Kodi : IKodi
     {

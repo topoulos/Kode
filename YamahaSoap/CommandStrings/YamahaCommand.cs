@@ -1,6 +1,6 @@
-﻿using Interfaces;
+﻿using Kode.Interfaces;
 
-namespace YamahaClient
+namespace Kode.YamahaClient.CommandStrings
 {
     public class YamahaCommand : IYamahaCommand
     {

@@ -1,4 +1,4 @@
-﻿namespace KodiClient
+﻿namespace Kode.KodiClient
 {
     public interface IRpcCommand
     {

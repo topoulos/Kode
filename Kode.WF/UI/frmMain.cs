@@ -1,7 +1,10 @@
-﻿using KodiClient;
+﻿using Kode.KodiClient;
 using System;
 using System.Windows.Forms;
-using YamahaClient;
+using Kode.YamahaClient;
+using Kode.YamahaClient.CommandStrings;
+using Kode.WF.Mediators;
+using Kode.KodiClient.Configuration;
 
 namespace Kode.WF
 {

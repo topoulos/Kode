@@ -1,4 +1,4 @@
-﻿namespace Interfaces
+﻿namespace Kode.Interfaces
 {
     public interface IKodiInputCommand
     {

@@ -4,15 +4,17 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B9D0DD96-739D-47BC-95F2-D4722EB9E2ED}</ProjectGuid>
-    <OutputType>Library</OutputType>
+    <ProjectGuid>{ECB944C3-DFE8-40B1-9BE6-88EDBC4F303A}</ProjectGuid>
+    <OutputType>Exe</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>YamahaSoap</RootNamespace>
-    <AssemblyName>YamahaSoap</AssemblyName>
+    <RootNamespace>YamahaTest</RootNamespace>
+    <AssemblyName>YamahaTest</AssemblyName>
     <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugSymbols>true</DebugSymbols>
     <DebugType>full</DebugType>
     <Optimize>false</Optimize>
@@ -22,6 +24,7 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
     <DebugType>pdbonly</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>bin\Release\</OutputPath>
@@ -40,15 +43,25 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AVReceiver.cs" />
+    <Compile Include="Ini.cs" />
+    <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="SoapCommand.cs" />
-    <Compile Include="CommandStrings\YamahaCommand.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Interfaces\Interfaces.csproj">
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Interfaces\Kode.Interface.csproj">
       <Project>{df1c6cec-5daf-4753-a01e-7a66038e1a59}</Project>
-      <Name>Interfaces</Name>
+      <Name>Kode.Interface</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\KodiClient\Kode.KodiClient.csproj">
+      <Project>{1727cd62-8ceb-4264-897d-4604b5713c65}</Project>
+      <Name>Kode.KodiClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\YamahaSoap\Kode.YamahaClient.csproj">
+      <Project>{b9d0dd96-739d-47bc-95f2-d4722eb9e2ed}</Project>
+      <Name>Kode.YamahaClient</Name>
     </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

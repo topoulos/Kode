@@ -1,5 +1,5 @@
-using Interfaces;
-namespace KodiClient
+using Kode.Interfaces;
+namespace Kode.KodiClient.CommandStrings
 {
     public class KodiApplicationCommand : IKodiApplicationCommand
     {

@@ -3,9 +3,9 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using Interfaces;
-using KodiClient;
-using YamahaClient;
+using Kode.Interfaces;
+using Kode.KodiClient;
+using Kode.YamahaClient;
 
 namespace YamahaTest
 {
