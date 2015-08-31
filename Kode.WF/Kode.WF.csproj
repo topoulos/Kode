@@ -122,6 +122,10 @@
       <Project>{df1c6cec-5daf-4753-a01e-7a66038e1a59}</Project>
       <Name>Kode.Interface</Name>
     </ProjectReference>
+    <ProjectReference Include="..\Kode.Resource\Kode.Resource.csproj">
+      <Project>{98396998-2712-4861-9a91-7c1d8fdda29d}</Project>
+      <Name>Kode.Resource</Name>
+    </ProjectReference>
     <ProjectReference Include="..\KodiClient\Kode.KodiClient.csproj">
       <Project>{1727cd62-8ceb-4264-897d-4604b5713c65}</Project>
       <Name>Kode.KodiClient</Name>

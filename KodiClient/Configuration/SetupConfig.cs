@@ -1,4 +1,5 @@
 ﻿using Kode.ConfigEditor;
+using Resx = Kode.Resource.Strings.Configuration;
 
 namespace Kode.KodiClient.Configuration
 {
@@ -9,13 +10,13 @@ namespace Kode.KodiClient.Configuration
 
         public SetupConfig()
         {
-            reader = new IniReader("setup.ini");
-            writer = new IniWriter("setup.ini");
+            reader = new IniReader(Resx.iniFileName);
+            writer = new IniWriter(Resx.iniFileName);
         }
         public string GetKodiIP()
         {
-            var ip = reader.GetString("Configuration", "KodiIP");
-            var port = reader.GetString("Configuration", "KodiPort");
+            var ip   = reader.GetString(Resx.ConfigurationSectionName, Resx.KodiIPKey);
+            var port = reader.GetString(Resx.ConfigurationSectionName, Resx.KodiPortKey);
             return (ip ?? string.Empty) + ":" + (port ?? string.Empty);
         }
     }

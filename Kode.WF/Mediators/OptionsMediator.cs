@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Windows.Forms;
 using Kode.Interfaces;
+using Resx = Kode.Resource.Strings.Configuration;
 
 namespace Kode.WF.Mediators
 {
@@ -35,15 +36,15 @@ namespace Kode.WF.Mediators
         }
         public void SaveOptions()
         {
-            writer.Set("Configuration", "KodiIP",   TextBoxes["txtKodiIP"].Text.Trim());
-            writer.Set("Configuration", "KodiPort", TextBoxes["txtKodiPort"].Text.Trim());
-            writer.Set("Configuration", "YamahaIP", TextBoxes["txtYamahaIP"].Text.Trim());
+            writer.Set(Resx.ConfigurationSectionName, Resx.KodiIPKey,   TextBoxes[Resx.txtKodiIPName].Text.Trim());
+            writer.Set(Resx.ConfigurationSectionName, Resx.KodiPortKey, TextBoxes[Resx.txtKodiPortName].Text.Trim());
+            writer.Set(Resx.ConfigurationSectionName, Resx.YamahaIPKey, TextBoxes[Resx.txtYamahaIPName].Text.Trim());
         }
         public void LoadOptions()
         {
-            TextBoxes["txtKodiIP"].Text   = reader.GetString("Configuration", "KodiIP");
-            TextBoxes["txtKodiPort"].Text = reader.GetString("Configuration", "KodiPort");
-            TextBoxes["txtYamahaIP"].Text = reader.GetString("Configuration", "YamahaIP");
+            TextBoxes[Resx.txtKodiIPName].Text   = reader.GetString(Resx.ConfigurationSectionName, Resx.KodiIPKey);
+            TextBoxes[Resx.txtKodiPortName].Text = reader.GetString(Resx.ConfigurationSectionName, Resx.KodiPortKey);
+            TextBoxes[Resx.txtYamahaIPName].Text = reader.GetString(Resx.ConfigurationSectionName, Resx.YamahaIPKey);
         }
 
     }

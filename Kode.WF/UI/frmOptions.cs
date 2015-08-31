@@ -3,6 +3,7 @@ using System.Windows.Forms;
 using Kode.Interfaces;
 using Kode.ConfigEditor;
 using Kode.WF.Mediators;
+using Resx = Kode.Resource.Strings.Configuration;
 
 namespace Kode.WF
 {
@@ -12,8 +13,8 @@ namespace Kode.WF
         public frmOptions()
         {
             InitializeComponent();
-            IIniReader reader = new IniReader("setup.ini");
-            IIniWriter writer = new IniWriter("setup.ini");
+            IIniReader reader = new IniReader(Resx.iniFileName);
+            IIniWriter writer = new IniWriter(Resx.iniFileName);
             mediator = new OptionsMediator(writer, reader);
             mediator.Register(this.txtKodiIP);
             mediator.Register(this.txtKodiPort);
