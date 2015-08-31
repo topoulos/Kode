@@ -20,6 +20,11 @@ namespace Kode.WF
             mediator.Register(this.txtKodiPort);
             mediator.Register(this.txtYamahaIP);
             mediator.Register(this.btnSave);
+            mediator.Register(this.txtHdmi1);
+            mediator.Register(this.txtHdmi2);
+            mediator.Register(this.txtHdmi3);
+            mediator.Register(this.txtHdmi4);
+            mediator.Register(this.txtVaux);
         }
 
         private void frmOptions_Load(object sender, EventArgs e)
@@ -31,6 +36,7 @@ namespace Kode.WF
         {
             mediator.SaveOptions();
             this.Close();
+
         }
     }
 }

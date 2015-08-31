@@ -51,6 +51,7 @@
     <Compile Include="IVolumeReturnEnvelope.cs" />
     <Compile Include="IKodiApplicationCommand.cs" />
     <Compile Include="IYamahaCommand.cs" />
+    <Compile Include="IYamahaResponse.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

@@ -61,11 +61,101 @@ namespace Kode.Resource.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to btnHdmi1.
+        /// </summary>
+        public static string btnHdmi1Name {
+            get {
+                return ResourceManager.GetString("btnHdmi1Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to btnHdmi2.
+        /// </summary>
+        public static string btnHdmi2Name {
+            get {
+                return ResourceManager.GetString("btnHdmi2Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to btnHdmi3.
+        /// </summary>
+        public static string btnHdmi3Name {
+            get {
+                return ResourceManager.GetString("btnHdmi3Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to btnHdmi4.
+        /// </summary>
+        public static string btnHdmi4Name {
+            get {
+                return ResourceManager.GetString("btnHdmi4Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to btnVaux.
+        /// </summary>
+        public static string btnVauxName {
+            get {
+                return ResourceManager.GetString("btnVauxName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to btnYamahaPower.
+        /// </summary>
+        public static string btnYamahaPowerName {
+            get {
+                return ResourceManager.GetString("btnYamahaPowerName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Configuration.
         /// </summary>
         public static string ConfigurationSectionName {
             get {
                 return ResourceManager.GetString("ConfigurationSectionName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hdmi1.
+        /// </summary>
+        public static string Hdmi1Key {
+            get {
+                return ResourceManager.GetString("Hdmi1Key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hdmi2.
+        /// </summary>
+        public static string Hdmi2Key {
+            get {
+                return ResourceManager.GetString("Hdmi2Key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hdmi3.
+        /// </summary>
+        public static string Hdmi3Key {
+            get {
+                return ResourceManager.GetString("Hdmi3Key", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Hdmi4.
+        /// </summary>
+        public static string Hdmi4Key {
+            get {
+                return ResourceManager.GetString("Hdmi4Key", resourceCulture);
             }
         }
         
@@ -97,6 +187,42 @@ namespace Kode.Resource.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to txtHdmi1.
+        /// </summary>
+        public static string txtHdmi1Name {
+            get {
+                return ResourceManager.GetString("txtHdmi1Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to txtHdmi2.
+        /// </summary>
+        public static string txtHdmi2Name {
+            get {
+                return ResourceManager.GetString("txtHdmi2Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to txtHdmi3.
+        /// </summary>
+        public static string txtHdmi3Name {
+            get {
+                return ResourceManager.GetString("txtHdmi3Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to txtHdmi4.
+        /// </summary>
+        public static string txtHdmi4Name {
+            get {
+                return ResourceManager.GetString("txtHdmi4Name", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to txtKodiIP.
         /// </summary>
         public static string txtKodiIPName {
@@ -115,11 +241,29 @@ namespace Kode.Resource.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to txtVaux.
+        /// </summary>
+        public static string txtVauxName {
+            get {
+                return ResourceManager.GetString("txtVauxName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to txtYamahaIP.
         /// </summary>
         public static string txtYamahaIPName {
             get {
                 return ResourceManager.GetString("txtYamahaIPName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to VAux.
+        /// </summary>
+        public static string VAuxKey {
+            get {
+                return ResourceManager.GetString("VAuxKey", resourceCulture);
             }
         }
         

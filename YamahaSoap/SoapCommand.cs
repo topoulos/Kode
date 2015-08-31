@@ -3,11 +3,14 @@ using System;
 using System.IO;
 using System.Net;
 using System.Xml;
+using System.Xml.Linq;
 
 namespace Kode.YamahaClient
 {
     public class SoapCommand : ISoapCommand
     {
+        public string Response { get; set; }
+
         public void SendCommand(string command)
         {
             var url = "http://192.168.0.186/YamahaRemoteControl/ctrl";
@@ -25,14 +28,13 @@ namespace Kode.YamahaClient
             asyncResult.AsyncWaitHandle.WaitOne();
 
             // get the response from the completed web request.
-            string soapResult;
             using (WebResponse webResponse = webRequest.EndGetResponse(asyncResult))
             {
                 using (StreamReader rd = new StreamReader(webResponse.GetResponseStream()))
                 {
-                    soapResult = rd.ReadToEnd();
+                    this.Response = rd.ReadToEnd();
                 }
-                Console.Write(soapResult);
+                Console.Write(this.Response);
             }
         }
 

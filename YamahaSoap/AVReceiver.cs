@@ -1,4 +1,6 @@
-﻿using Kode.Interfaces;
+﻿using System;
+using Kode.Interfaces;
+using System.Xml.Linq;
 
 namespace Kode.YamahaClient
 {
@@ -6,11 +8,13 @@ namespace Kode.YamahaClient
     {
         private IYamahaCommand yamahaCommand;
         private ISoapCommand soapCommand;
+        private IYamahaResponse yamahaResponse;
 
-        public AVReceiver(IYamahaCommand yamahaCommand, ISoapCommand soapCommand)
+        public AVReceiver(IYamahaCommand yamahaCommand, ISoapCommand soapCommand, IYamahaResponse yamahaResponse)
         {
             this.yamahaCommand = yamahaCommand;
             this.soapCommand   = soapCommand;
+            this.yamahaResponse = yamahaResponse;
         }
 
         public void PowerOn()
@@ -31,6 +35,38 @@ namespace Kode.YamahaClient
         public void VolumeDown()
         {
             soapCommand.SendCommand(yamahaCommand.VolDown);
+        }
+
+        public void HDMI1()
+        {
+            soapCommand.SendCommand(yamahaCommand.HDMI1);
+        }
+
+        public void HDMI2()
+        {
+            soapCommand.SendCommand(yamahaCommand.HDMI2);
+        }
+
+        public void HDMI3()
+        {
+            soapCommand.SendCommand(yamahaCommand.HDMI3);
+        }
+
+        public void HDMI4()
+        {
+            soapCommand.SendCommand(yamahaCommand.HDMI4);
+        }
+
+        public void VAUX()
+        {
+            soapCommand.SendCommand(yamahaCommand.VAUX);
+        }
+
+        public bool GetPowerState()
+        {
+            soapCommand.SendCommand(yamahaCommand.GetPowerState);
+            var power = yamahaResponse.CurrentPowerState(soapCommand.Response);
+            return (power=="On")? true :false;
         }
     }
 }

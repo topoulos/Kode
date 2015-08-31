@@ -141,4 +141,52 @@
   <data name="YamahaIPKey" xml:space="preserve">
     <value>YamahaIP</value>
   </data>
+  <data name="btnHdmi1Name" xml:space="preserve">
+    <value>btnHdmi1</value>
+  </data>
+  <data name="btnHdmi2Name" xml:space="preserve">
+    <value>btnHdmi2</value>
+  </data>
+  <data name="btnHdmi3Name" xml:space="preserve">
+    <value>btnHdmi3</value>
+  </data>
+  <data name="btnHdmi4Name" xml:space="preserve">
+    <value>btnHdmi4</value>
+  </data>
+  <data name="Hdmi1Key" xml:space="preserve">
+    <value>Hdmi1</value>
+  </data>
+  <data name="Hdmi2Key" xml:space="preserve">
+    <value>Hdmi2</value>
+  </data>
+  <data name="Hdmi3Key" xml:space="preserve">
+    <value>Hdmi3</value>
+  </data>
+  <data name="Hdmi4Key" xml:space="preserve">
+    <value>Hdmi4</value>
+  </data>
+  <data name="btnVauxName" xml:space="preserve">
+    <value>btnVaux</value>
+  </data>
+  <data name="VAuxKey" xml:space="preserve">
+    <value>VAux</value>
+  </data>
+  <data name="txtHdmi1Name" xml:space="preserve">
+    <value>txtHdmi1</value>
+  </data>
+  <data name="txtHdmi2Name" xml:space="preserve">
+    <value>txtHdmi2</value>
+  </data>
+  <data name="txtHdmi3Name" xml:space="preserve">
+    <value>txtHdmi3</value>
+  </data>
+  <data name="txtHdmi4Name" xml:space="preserve">
+    <value>txtHdmi4</value>
+  </data>
+  <data name="txtVauxName" xml:space="preserve">
+    <value>txtVaux</value>
+  </data>
+  <data name="btnYamahaPowerName" xml:space="preserve">
+    <value>btnYamahaPower</value>
+  </data>
 </root>

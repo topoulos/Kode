@@ -63,6 +63,16 @@ namespace Kode.WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _300px_Side_by_side_dark_transparent {
+            get {
+                object obj = ResourceManager.GetObject("300px-Side-by-side-dark-transparent", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap back {
             get {
                 object obj = ResourceManager.GetObject("back", resourceCulture);
@@ -116,6 +126,26 @@ namespace Kode.WF.Properties {
         internal static System.Drawing.Bitmap gnome_go_home__1_ {
             get {
                 object obj = ResourceManager.GetObject("gnome_go_home (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap logo_yamaha4 {
+            get {
+                object obj = ResourceManager.GetObject("logo_yamaha4", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap power__2_ {
+            get {
+                object obj = ResourceManager.GetObject("power (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
