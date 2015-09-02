@@ -1,6 +1,4 @@
-﻿using System;
-using Kode.Interfaces;
-using System.Xml.Linq;
+﻿using Kode.Interfaces;
 
 namespace Kode.YamahaClient
 {
@@ -13,7 +11,7 @@ namespace Kode.YamahaClient
         public AVReceiver(IYamahaCommand yamahaCommand, ISoapCommand soapCommand, IYamahaResponse yamahaResponse)
         {
             this.yamahaCommand = yamahaCommand;
-            this.soapCommand   = soapCommand;
+            this.soapCommand = soapCommand;
             this.yamahaResponse = yamahaResponse;
         }
 
@@ -25,16 +23,6 @@ namespace Kode.YamahaClient
         public void PowerOff()
         {
             soapCommand.SendCommand(yamahaCommand.Off);
-        }
-
-        public void VolumeUp()
-        {
-            soapCommand.SendCommand(yamahaCommand.VolUp);
-        }
-
-        public void VolumeDown()
-        {
-            soapCommand.SendCommand(yamahaCommand.VolDown);
         }
 
         public void HDMI1()
@@ -66,7 +54,20 @@ namespace Kode.YamahaClient
         {
             soapCommand.SendCommand(yamahaCommand.GetPowerState);
             var power = yamahaResponse.CurrentPowerState(soapCommand.Response);
-            return (power=="On")? true :false;
+            return (power == "On") ? true : false;
+        }
+
+        public int GetCurrentVolume()
+        {
+            soapCommand.SendCommand(yamahaCommand.CurrentVol);
+            var unformattedLevel = yamahaResponse.CurrentVolume(soapCommand.Response);
+            var levelWithoutDB = unformattedLevel.Replace("dB", "");
+            return int.Parse(levelWithoutDB);
+        }
+
+        public void SetVolume(int level)
+        {
+            soapCommand.SendCommand(yamahaCommand.SetVolume(level));
         }
     }
 }

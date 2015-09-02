@@ -13,5 +13,7 @@
         string VolDown { get; }
         string VolMute { get; }
         string VolUp { get; }
+        string SetVolume(int level);
+        string CurrentVol { get; }
     }
 }

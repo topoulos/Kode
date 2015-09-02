@@ -189,4 +189,10 @@
   <data name="btnYamahaPowerName" xml:space="preserve">
     <value>btnYamahaPower</value>
   </data>
+  <data name="tbKodiVolumeName" xml:space="preserve">
+    <value>tbKodiVolume</value>
+  </data>
+  <data name="tbYamahaVolumeName" xml:space="preserve">
+    <value>tbYamahaVolume</value>
+  </data>
 </root>

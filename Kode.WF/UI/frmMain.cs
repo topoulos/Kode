@@ -20,22 +20,23 @@ namespace Kode.WF
         public frmMain()
         {
             InitializeComponent();
-            var iniReader = new IniReader(Resx.iniFileName);
-            var config = new SetupConfig();
-            var rpcCommand = new RpcCommand(config.GetKodiIP());
-            var kodi = new Kodi(rpcCommand);
-            var yamahaCommand = new YamahaCommand();
-            var soapCommand = new SoapCommand();
+            var iniReader      = new IniReader(Resx.iniFileName);
+            var config         = new SetupConfig();
+            var rpcCommand     = new RpcCommand(config.GetKodiIP());
+            var kodi           = new Kodi(rpcCommand);
+            var yamahaCommand  = new YamahaCommand();
+            var soapCommand    = new SoapCommand();
             var yamahaResponse = new YamahaResponse();
-            var avReceiver = new AVReceiver(yamahaCommand, soapCommand, yamahaResponse);
-            mediator = new Mediator(kodi, avReceiver, iniReader);
+            var avReceiver     = new AVReceiver(yamahaCommand, soapCommand, yamahaResponse);
+            mediator           = new Mediator(kodi, avReceiver, iniReader);
 
             RegisterButtons();
         }
 
         private void RegisterButtons()
         {
-            mediator.Register(tbVolume);
+            mediator.Register(tbKodiVolume);
+            mediator.Register(tbYamahaVolume);
             mediator.Register(btnHdmi1);
             mediator.Register(btnHdmi2);
             mediator.Register(btnHdmi3);
@@ -46,7 +47,10 @@ namespace Kode.WF
 
         private void Form1_Load(object sender, EventArgs e)
         {
-            tbVolume.Value = mediator.GetVolumeLevel();
+            tbKodiVolume.Value = mediator.GetKodiVolumeLevel();
+            tbYamahaVolume.Value = mediator.GetYamahaVolumeLevel();
+            lblYamahaVolume.Text = tbYamahaVolume.Value.ToString();
+
             mediator.SetInputLabels();
             mediator.SetInitialPowerColor();
         }
@@ -83,7 +87,7 @@ namespace Kode.WF
 
         private void tbVolume_Scroll(object sender, EventArgs e)
         {
-            mediator.SetVolumeLevel(tbVolume.Value);
+            mediator.SetKodiVolumeLevel(tbKodiVolume.Value);
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -97,21 +101,6 @@ namespace Kode.WF
             frmOptions.ShowDialog();
             mediator.SetInputLabels();
             this.Refresh();
-        }
-
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void btnLowerVolume_Click(object sender, EventArgs e)
-        {
-            mediator.ReceiverVolumeDown();
-        }
-
-        private void btnRaiseVolume_Click(object sender, EventArgs e)
-        {
-            mediator.ReceiverVolumeUp();
         }
 
         private void btnYamahaPower_Click(object sender, EventArgs e)
@@ -142,6 +131,39 @@ namespace Kode.WF
         private void btnVaux_Click(object sender, EventArgs e)
         {
             mediator.VAUX();
+        }
+
+        private void tbYamahaVolume_Scroll(object sender, EventArgs e)
+        {
+            var vol = tbYamahaVolume.Value;
+            if (vol % 5 != 0) lblYamahaVolume.Text = vol.ToString();
+        }
+
+        private void tbYamahaVolume_MouseUp(object sender, MouseEventArgs e)
+        {
+            MoveYamahaVolume();
+        }
+
+        private void MoveYamahaVolume()
+        {
+            var vol = tbYamahaVolume.Value;
+            if (vol % 5 != 0) vol = RoundByFive(vol);
+            tbYamahaVolume.Value = vol;
+            lblYamahaVolume.Text = vol.ToString();
+            mediator.SetYamahaVolume(tbYamahaVolume.Value);
+        }
+
+        private int RoundByFive(int number)
+        {
+            var beforeRounding = (float)number / 10;
+            var rounded = Math.Round(beforeRounding, 0);
+            var expanded = rounded * 10;
+            return (int)expanded;
+        }
+
+        private void tbYamahaVolume_KeyUp(object sender, KeyEventArgs e)
+        {
+            MoveYamahaVolume();
         }
     }
 }

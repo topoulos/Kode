@@ -1,4 +1,5 @@
-﻿using Kode.Interfaces;
+﻿using System;
+using Kode.Interfaces;
 
 namespace Kode.YamahaClient.CommandStrings
 {
@@ -71,7 +72,7 @@ namespace Kode.YamahaClient.CommandStrings
         {
             get
             {
-                return XmlTemplateHeader + @"<YAMAHA_AV cmd=""PUT""><Main_Zone><Volume><Lvl><Val>Down 5 dB</Val></Lvl></Volume></Main_Zone></YAMAHA_AV>";
+                return XmlTemplateHeader + @"<YAMAHA_AV cmd=""PUT""><Main_Zone><Volume><Lvl><Val>-10</Val><Exp>1</Exp><Unit>dB</Unit></Lvl></Volume></Main_Zone></YAMAHA_AV>";
             }
         }
 
@@ -87,10 +88,28 @@ namespace Kode.YamahaClient.CommandStrings
         {
             get
             {
-                return XmlTemplateHeader + @"<YAMAHA_AV cmd=""PUT""><Main_Zone><Volume><Lvl><Val>Up 5 dB</Val></Lvl></Volume></Main_Zone></YAMAHA_AV>";
+                return XmlTemplateHeader + @"<YAMAHA_AV cmd=""PUT""><Main_Zone><Volume><Lvl><Val>10</Val><Exp>1</Exp><Unit>dB</Unit></Lvl></Volume></Main_Zone></YAMAHA_AV>";
             }
         }
 
+        public string CurrentVol
+        {
+            get
+            {
+                return XmlTemplateHeader + @"<YAMAHA_AV cmd=""GET""><Main_Zone><Volume><Lvl>GetParam</Lvl></Volume></Main_Zone></YAMAHA_AV>";
+            }
+
+        }
+
         private string XmlTemplateHeader = @"<?xml version =""1.0"" encoding=""utf-8""?>";
+
+        public string SetVolume(int level)
+        {
+            var expanded = level * 10;
+            var formattedVolume = expanded.ToString();
+            //<?xml version ="1.0" encoding="utf-8"?><YAMAHA_AV cmd="PUT"><Main_Zone><Volume><Lvl><Val>45</Val><Exp>1</Exp><Unit>dB</Unit></Lvl></Volume></Main_Zone></YAMAHA_AV>
+            var volumeXml =  XmlTemplateHeader + $@"<YAMAHA_AV cmd=""PUT""><Main_Zone><Volume><Lvl><Val>{formattedVolume}</Val><Exp>1</Exp><Unit>dB</Unit></Lvl></Volume></Main_Zone></YAMAHA_AV>";
+            return volumeXml;
+        }
     }
 }

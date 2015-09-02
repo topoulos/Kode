@@ -187,6 +187,24 @@ namespace Kode.Resource.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to tbKodiVolume.
+        /// </summary>
+        public static string tbKodiVolumeName {
+            get {
+                return ResourceManager.GetString("tbKodiVolumeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to tbYamahaVolume.
+        /// </summary>
+        public static string tbYamahaVolumeName {
+            get {
+                return ResourceManager.GetString("tbYamahaVolumeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to txtHdmi1.
         /// </summary>
         public static string txtHdmi1Name {

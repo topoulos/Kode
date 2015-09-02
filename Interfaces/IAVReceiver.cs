@@ -9,8 +9,8 @@
         void HDMI4();
         void VAUX();
         void PowerOn();
-        void VolumeDown();
-        void VolumeUp();
         bool GetPowerState();
+        int GetCurrentVolume();
+        void SetVolume(int level);
     }
 }

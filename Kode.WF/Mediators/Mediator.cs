@@ -1,4 +1,5 @@
 ﻿using Kode.Interfaces;
+using System;
 using System.Windows.Forms;
 using Resx = Kode.Resource.Strings.Configuration;
 
@@ -8,7 +9,9 @@ namespace Kode.WF.Mediators
     {
         private IKodi kodi;
         private IAVReceiver avReceiver;
-        private TrackBar VolumeBar;
+        private TrackBar KodiVolume;
+        private TrackBar YamahaVolume;
+        
         private Button btnHdmi1;
         private Button btnHdmi2;
         private Button btnHdmi3;
@@ -54,7 +57,14 @@ namespace Kode.WF.Mediators
 
         public void Register(TrackBar tb)
         {
-            VolumeBar = tb;
+            if (tb.Name == Resx.tbKodiVolumeName)
+            {
+                KodiVolume = tb;
+            }
+            else if (tb.Name == Resx.tbYamahaVolumeName)
+            {
+                YamahaVolume = tb;
+            }
         }
 
         public void UpButtonClick()
@@ -87,12 +97,23 @@ namespace Kode.WF.Mediators
             kodi.Back();
         }
 
-        public int GetVolumeLevel()
+        public int GetKodiVolumeLevel()
         {
             return kodi.GetVolumeLevel();
         }
-
-        public void SetVolumeLevel(int level)
+        public int GetYamahaVolumeLevel()
+        {
+            var trueAmount = avReceiver.GetCurrentVolume();
+            var forRounding = ((float)trueAmount) / 100;
+            var rounded = Math.Round(forRounding, 0);
+            var forControl = (int)(rounded );
+            return forControl;
+        }
+        public void SetYamahaVolume(int level)
+        {
+            avReceiver.SetVolume(level);
+        }
+        public void SetKodiVolumeLevel(int level)
         {
             kodi.SetVolume(level);
         }
@@ -144,16 +165,6 @@ namespace Kode.WF.Mediators
         public void VAUX()
         {
             avReceiver.VAUX();
-        }
-
-        public void ReceiverVolumeUp()
-        {
-            avReceiver.VolumeUp();
-        }
-
-        public void ReceiverVolumeDown()
-        {
-            avReceiver.VolumeDown();
         }
 
         public bool GetPowerState()

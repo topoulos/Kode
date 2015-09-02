@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.tbVolume = new System.Windows.Forms.TrackBar();
+            this.tbKodiVolume = new System.Windows.Forms.TrackBar();
             this.btnHdmi1 = new System.Windows.Forms.Button();
             this.btnHdmi2 = new System.Windows.Forms.Button();
             this.btnHdmi3 = new System.Windows.Forms.Button();
@@ -45,24 +45,25 @@
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.btnVaux = new System.Windows.Forms.Button();
-            this.btnLowerVolume = new System.Windows.Forms.Button();
-            this.btnRaiseVolume = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.tbVolume)).BeginInit();
+            this.tbYamahaVolume = new System.Windows.Forms.TrackBar();
+            this.lblYamahaVolume = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.tbKodiVolume)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbYamahaVolume)).BeginInit();
             this.SuspendLayout();
             // 
-            // tbVolume
+            // tbKodiVolume
             // 
-            this.tbVolume.LargeChange = 50;
-            this.tbVolume.Location = new System.Drawing.Point(12, 180);
-            this.tbVolume.Maximum = 100;
-            this.tbVolume.Name = "tbVolume";
-            this.tbVolume.Size = new System.Drawing.Size(170, 45);
-            this.tbVolume.SmallChange = 10;
-            this.tbVolume.TabIndex = 6;
-            this.tbVolume.TickFrequency = 10;
-            this.tbVolume.Scroll += new System.EventHandler(this.tbVolume_Scroll);
+            this.tbKodiVolume.LargeChange = 50;
+            this.tbKodiVolume.Location = new System.Drawing.Point(12, 180);
+            this.tbKodiVolume.Maximum = 100;
+            this.tbKodiVolume.Name = "tbKodiVolume";
+            this.tbKodiVolume.Size = new System.Drawing.Size(170, 45);
+            this.tbKodiVolume.SmallChange = 10;
+            this.tbKodiVolume.TabIndex = 6;
+            this.tbKodiVolume.TickFrequency = 10;
+            this.tbKodiVolume.Scroll += new System.EventHandler(this.tbVolume_Scroll);
             // 
             // btnHdmi1
             // 
@@ -212,7 +213,6 @@
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 15;
             this.pictureBox1.TabStop = false;
-            this.pictureBox1.Click += new System.EventHandler(this.pictureBox1_Click);
             // 
             // pictureBox2
             // 
@@ -234,27 +234,32 @@
             this.btnVaux.UseVisualStyleBackColor = true;
             this.btnVaux.Click += new System.EventHandler(this.btnVaux_Click);
             // 
-            // btnLowerVolume
+            // tbYamahaVolume
             // 
-            this.btnLowerVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnLowerVolume.Image = global::Kode.WF.Properties.Resources.back;
-            this.btnLowerVolume.Location = new System.Drawing.Point(295, 167);
-            this.btnLowerVolume.Name = "btnLowerVolume";
-            this.btnLowerVolume.Size = new System.Drawing.Size(51, 38);
-            this.btnLowerVolume.TabIndex = 18;
-            this.btnLowerVolume.UseVisualStyleBackColor = true;
-            this.btnLowerVolume.Click += new System.EventHandler(this.btnLowerVolume_Click);
+            this.tbYamahaVolume.LargeChange = 10;
+            this.tbYamahaVolume.Location = new System.Drawing.Point(248, 176);
+            this.tbYamahaVolume.Maximum = 5;
+            this.tbYamahaVolume.Minimum = -80;
+            this.tbYamahaVolume.Name = "tbYamahaVolume";
+            this.tbYamahaVolume.Size = new System.Drawing.Size(170, 45);
+            this.tbYamahaVolume.SmallChange = 5;
+            this.tbYamahaVolume.TabIndex = 18;
+            this.tbYamahaVolume.TickFrequency = 10;
+            this.tbYamahaVolume.Scroll += new System.EventHandler(this.tbYamahaVolume_Scroll);
+            this.tbYamahaVolume.KeyUp += new System.Windows.Forms.KeyEventHandler(this.tbYamahaVolume_KeyUp);
+            this.tbYamahaVolume.MouseUp += new System.Windows.Forms.MouseEventHandler(this.tbYamahaVolume_MouseUp);
             // 
-            // btnRaiseVolume
+            // lblYamahaVolume
             // 
-            this.btnRaiseVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnRaiseVolume.Image = global::Kode.WF.Properties.Resources.right;
-            this.btnRaiseVolume.Location = new System.Drawing.Point(352, 167);
-            this.btnRaiseVolume.Name = "btnRaiseVolume";
-            this.btnRaiseVolume.Size = new System.Drawing.Size(51, 38);
-            this.btnRaiseVolume.TabIndex = 19;
-            this.btnRaiseVolume.UseVisualStyleBackColor = true;
-            this.btnRaiseVolume.Click += new System.EventHandler(this.btnRaiseVolume_Click);
+            this.lblYamahaVolume.AutoSize = true;
+            this.lblYamahaVolume.BackColor = System.Drawing.SystemColors.ControlText;
+            this.lblYamahaVolume.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblYamahaVolume.ForeColor = System.Drawing.Color.Coral;
+            this.lblYamahaVolume.Location = new System.Drawing.Point(359, 208);
+            this.lblYamahaVolume.Name = "lblYamahaVolume";
+            this.lblYamahaVolume.Size = new System.Drawing.Size(46, 17);
+            this.lblYamahaVolume.TabIndex = 19;
+            this.lblYamahaVolume.Text = "label1";
             // 
             // frmMain
             // 
@@ -262,8 +267,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.ControlDarkDark;
             this.ClientSize = new System.Drawing.Size(446, 308);
-            this.Controls.Add(this.btnRaiseVolume);
-            this.Controls.Add(this.btnLowerVolume);
+            this.Controls.Add(this.lblYamahaVolume);
+            this.Controls.Add(this.tbYamahaVolume);
             this.Controls.Add(this.btnVaux);
             this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnHdmi4);
@@ -273,7 +278,7 @@
             this.Controls.Add(this.btnYamahaPower);
             this.Controls.Add(this.btnOptions);
             this.Controls.Add(this.btnHome);
-            this.Controls.Add(this.tbVolume);
+            this.Controls.Add(this.tbKodiVolume);
             this.Controls.Add(this.btnBack);
             this.Controls.Add(this.btnSelect);
             this.Controls.Add(this.btnUp);
@@ -284,9 +289,10 @@
             this.Name = "frmMain";
             this.Text = "Kode";
             this.Load += new System.EventHandler(this.Form1_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.tbVolume)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbKodiVolume)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.tbYamahaVolume)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -300,7 +306,7 @@
         private System.Windows.Forms.Button btnUp;
         private System.Windows.Forms.Button btnSelect;
         private System.Windows.Forms.Button btnBack;
-        private System.Windows.Forms.TrackBar tbVolume;
+        private System.Windows.Forms.TrackBar tbKodiVolume;
         private System.Windows.Forms.Button btnHome;
         private System.Windows.Forms.Button btnOptions;
         private System.Windows.Forms.Button btnYamahaPower;
@@ -311,8 +317,8 @@
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.Button btnVaux;
-        private System.Windows.Forms.Button btnLowerVolume;
-        private System.Windows.Forms.Button btnRaiseVolume;
+        private System.Windows.Forms.TrackBar tbYamahaVolume;
+        private System.Windows.Forms.Label lblYamahaVolume;
     }
 }
 
