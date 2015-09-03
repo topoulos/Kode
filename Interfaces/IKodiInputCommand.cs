@@ -9,7 +9,7 @@
         string Right { get; set; }
         string Select { get; set; }
         string Up { get; set; }
-
+        string PlayPause { get; set; }
         string SendText(string text);
     }
 }

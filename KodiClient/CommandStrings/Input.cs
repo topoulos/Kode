@@ -1,15 +1,17 @@
-﻿using Kode.Interfaces;
+﻿using System;
+using Kode.Interfaces;
 namespace Kode.KodiClient.CommandStrings
 {
     public class KodiInputCommand : IKodiInputCommand
     {
-        private string back   = @"jsonrpc?request={""jsonrpc"": ""2.0"", ""method"": ""Input.Back"" }";
-        private string down   = @"jsonrpc?request={""jsonrpc"": ""2.0"", ""method"": ""Input.Down"" }";
-        private string up     = @"jsonrpc?request={""jsonrpc"": ""2.0"", ""method"": ""Input.Up"" }";
-        private string left   = @"jsonrpc?request={""jsonrpc"": ""2.0"", ""method"": ""Input.Left"" }";
-        private string home   = @"jsonrpc?request={""jsonrpc"": ""2.0"", ""method"": ""Input.Home"" }";
-        private string right  = @"jsonrpc?request={""jsonrpc"": ""2.0"", ""method"": ""Input.Right"" }";
-        private string select = @"jsonrpc?request={""jsonrpc"": ""2.0"", ""method"": ""Input.Select"" }";
+        private string back      = @"jsonrpc?request={""jsonrpc"": ""2.0"", ""method"": ""Input.Back"" }";
+        private string down      = @"jsonrpc?request={""jsonrpc"": ""2.0"", ""method"": ""Input.Down"" }";
+        private string up        = @"jsonrpc?request={""jsonrpc"": ""2.0"", ""method"": ""Input.Up"" }";
+        private string left      = @"jsonrpc?request={""jsonrpc"": ""2.0"", ""method"": ""Input.Left"" }";
+        private string home      = @"jsonrpc?request={""jsonrpc"": ""2.0"", ""method"": ""Input.Home"" }";
+        private string right     = @"jsonrpc?request={""jsonrpc"": ""2.0"", ""method"": ""Input.Right"" }";
+        private string select    = @"jsonrpc?request={""jsonrpc"": ""2.0"", ""method"": ""Input.Select"" }";
+        private string playpause = @"jsonrpc?request={""jsonrpc"": ""2.0"", ""method"": ""Player.PlayPause"", ""params"": { ""playerid"": 1 }, ""id"": 1}";
 
         public string Back
         {
@@ -99,6 +101,19 @@ namespace Kode.KodiClient.CommandStrings
             set
             {
                 select = value;
+            }
+        }
+
+        public string PlayPause
+        {
+            get
+            {
+                return playpause;
+            }
+
+            set
+            {
+                playpause = value;
             }
         }
 

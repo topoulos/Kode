@@ -97,6 +97,15 @@ namespace Kode.Resource.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to btnPlayPause.
+        /// </summary>
+        public static string btnPlayPauseName {
+            get {
+                return ResourceManager.GetString("btnPlayPauseName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to btnVaux.
         /// </summary>
         public static string btnVauxName {
@@ -183,6 +192,15 @@ namespace Kode.Resource.Strings {
         public static string KodiPortKey {
             get {
                 return ResourceManager.GetString("KodiPortKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to lblYamahaVolume.
+        /// </summary>
+        public static string lblYamahaVolumeName {
+            get {
+                return ResourceManager.GetString("lblYamahaVolumeName", resourceCulture);
             }
         }
         

@@ -35,6 +35,7 @@ namespace Kode.WF
 
         private void RegisterButtons()
         {
+            mediator.Register(lblYamahaVolume);
             mediator.Register(tbKodiVolume);
             mediator.Register(tbYamahaVolume);
             mediator.Register(btnHdmi1);
@@ -43,6 +44,7 @@ namespace Kode.WF
             mediator.Register(btnHdmi4);
             mediator.Register(btnVaux);
             mediator.Register(btnYamahaPower);
+            mediator.Register(btnPlayPause);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -141,29 +143,18 @@ namespace Kode.WF
 
         private void tbYamahaVolume_MouseUp(object sender, MouseEventArgs e)
         {
-            MoveYamahaVolume();
+            mediator.MoveYamahaVolume();
         }
 
-        private void MoveYamahaVolume()
-        {
-            var vol = tbYamahaVolume.Value;
-            if (vol % 5 != 0) vol = RoundByFive(vol);
-            tbYamahaVolume.Value = vol;
-            lblYamahaVolume.Text = vol.ToString();
-            mediator.SetYamahaVolume(tbYamahaVolume.Value);
-        }
-
-        private int RoundByFive(int number)
-        {
-            var beforeRounding = (float)number / 10;
-            var rounded = Math.Round(beforeRounding, 0);
-            var expanded = rounded * 10;
-            return (int)expanded;
-        }
 
         private void tbYamahaVolume_KeyUp(object sender, KeyEventArgs e)
         {
-            MoveYamahaVolume();
+            mediator.MoveYamahaVolume();
+        }
+
+        private void btnPlayPause_Click(object sender, EventArgs e)
+        {
+            mediator.KodiPlayPause();
         }
     }
 }

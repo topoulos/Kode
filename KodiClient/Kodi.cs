@@ -1,4 +1,5 @@
-﻿using Kode.Interfaces;
+﻿using System;
+using Kode.Interfaces;
 using Kode.KodiClient.CommandStrings;
 
 namespace Kode.KodiClient
@@ -75,6 +76,11 @@ namespace Kode.KodiClient
         public void Home()
         {
             rpcCommand.SendCommand(input.Home);
+        }
+
+        public void PlayPause()
+        {
+            rpcCommand.SendCommand(input.PlayPause);
         }
     }
 }

@@ -143,6 +143,16 @@ namespace Kode.WF.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap media_play_pause_resume__1_ {
+            get {
+                object obj = ResourceManager.GetObject("media_play_pause_resume (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap power__2_ {
             get {
                 object obj = ResourceManager.GetObject("power (2)", resourceCulture);

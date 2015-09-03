@@ -9,6 +9,7 @@
         void Select();
         void Home();
         void Up();
+        void PlayPause();
         void VolumeToFull();
         void VolumeToHalf();
         void VolumeToMute();

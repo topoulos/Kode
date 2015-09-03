@@ -195,4 +195,10 @@
   <data name="tbYamahaVolumeName" xml:space="preserve">
     <value>tbYamahaVolume</value>
   </data>
+  <data name="lblYamahaVolumeName" xml:space="preserve">
+    <value>lblYamahaVolume</value>
+  </data>
+  <data name="btnPlayPauseName" xml:space="preserve">
+    <value>btnPlayPause</value>
+  </data>
 </root>

@@ -9,14 +9,16 @@ namespace Kode.WF.Mediators
     {
         private IKodi kodi;
         private IAVReceiver avReceiver;
-        private TrackBar KodiVolume;
-        private TrackBar YamahaVolume;
-        
+        private TrackBar tbKodiVolume;
+        private TrackBar tbYamahaVolume;
+
+        private Label lblYamahaVolume;
         private Button btnHdmi1;
         private Button btnHdmi2;
         private Button btnHdmi3;
         private Button btnHdmi4;
         private Button btnVAux;
+        private Button btnPlayPause;
         private Button btnYamahaPower;
         private IIniReader iniReader;
 
@@ -53,20 +55,30 @@ namespace Kode.WF.Mediators
             {
                 btnYamahaPower = btn;
             }
+            else if (btn.Name == Resx.btnPlayPauseName)
+            {
+                btnPlayPause = btn;
+            }
         }
 
         public void Register(TrackBar tb)
         {
             if (tb.Name == Resx.tbKodiVolumeName)
             {
-                KodiVolume = tb;
+                tbKodiVolume = tb;
             }
             else if (tb.Name == Resx.tbYamahaVolumeName)
             {
-                YamahaVolume = tb;
+                tbYamahaVolume = tb;
             }
         }
-
+        public void Register(Label lbl)
+        {
+            if (lbl.Name == Resx.lblYamahaVolumeName)
+            {
+                lblYamahaVolume = lbl;
+            }
+        }
         public void UpButtonClick()
         {
             kodi.Up();
@@ -198,6 +210,25 @@ namespace Kode.WF.Mediators
                 ? System.Drawing.Color.LimeGreen
                 : System.Drawing.Color.FromKnownColor(System.Drawing.KnownColor.ControlDarkDark);
         }
+        public void MoveYamahaVolume()
+        {
+            var vol = tbYamahaVolume.Value;
+            if (vol % 5 != 0) vol = RoundByFive(vol);
+            tbYamahaVolume.Value = vol;
+            lblYamahaVolume.Text = vol.ToString();
+            SetYamahaVolume(tbYamahaVolume.Value);
+        }
 
+        private int RoundByFive(int number)
+        {
+            var beforeRounding = (float)number / 10;
+            var rounded = Math.Round(beforeRounding, 0);
+            var expanded = rounded * 10;
+            return (int)expanded;
+        }
+        public void KodiPlayPause()
+        {
+            kodi.PlayPause();
+        }
     }
 }
