@@ -7,3 +7,5 @@ Hdmi2 = Kodi
 Hdmi3 = WiiU
 Hdmi4 = Xbox
 VAux = ChromeCast
+BarBackColor = #FFFFFF
+BarForeColor = #000000

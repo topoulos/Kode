@@ -18,6 +18,8 @@ namespace Kode.WF.Mediators
         private TextBox txtHdmi3;
         private TextBox txtHdmi4;
         private TextBox txtVaux;
+        private TextBox txtForeColor;
+        private TextBox txtBackColor;
 
         public OptionsMediator(IIniWriter writer, IIniReader reader)
         {
@@ -59,6 +61,14 @@ namespace Kode.WF.Mediators
             {
                 txtVaux = txt;
             }
+            else if (txt.Name == Resx.txtBarBackColorName)
+            {
+                txtBackColor = txt;
+            }
+            else if (txt.Name == Resx.txtBarForColorName)
+            {
+                txtForeColor = txt;
+            }
         }
 
         public void Register(Button btn)
@@ -81,6 +91,8 @@ namespace Kode.WF.Mediators
             writer.Set(Resx.ConfigurationSectionName, Resx.Hdmi3Key, txtHdmi3.Text.Trim());
             writer.Set(Resx.ConfigurationSectionName, Resx.Hdmi4Key, txtHdmi4.Text.Trim());
             writer.Set(Resx.ConfigurationSectionName, Resx.VAuxKey, txtVaux.Text.Trim());
+            writer.Set(Resx.ConfigurationSectionName, Resx.BarBackColorKey, txtBackColor.Text.Trim());
+            writer.Set(Resx.ConfigurationSectionName, Resx.BarForeColorKey, txtForeColor.Text.Trim());
         }
 
         public void LoadOptions()
@@ -93,6 +105,8 @@ namespace Kode.WF.Mediators
             txtHdmi3.Text = reader.GetString(Resx.ConfigurationSectionName, Resx.Hdmi3Key);
             txtHdmi4.Text = reader.GetString(Resx.ConfigurationSectionName, Resx.Hdmi4Key);
             txtVaux.Text = reader.GetString(Resx.ConfigurationSectionName, Resx.VAuxKey);
+            txtForeColor.Text = reader.GetString(Resx.ConfigurationSectionName, Resx.BarForeColorKey);
+            txtBackColor.Text = reader.GetString(Resx.ConfigurationSectionName, Resx.BarBackColorKey);
         }
     }
 }

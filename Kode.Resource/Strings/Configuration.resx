@@ -201,4 +201,16 @@
   <data name="btnPlayPauseName" xml:space="preserve">
     <value>btnPlayPause</value>
   </data>
+  <data name="BarBackColorKey" xml:space="preserve">
+    <value>BarBackColor</value>
+  </data>
+  <data name="BarForeColorKey" xml:space="preserve">
+    <value>BarForeColor</value>
+  </data>
+  <data name="txtBarBackColorName" xml:space="preserve">
+    <value>txtBackcolor</value>
+  </data>
+  <data name="txtBarForColorName" xml:space="preserve">
+    <value>txtForecolor</value>
+  </data>
 </root>

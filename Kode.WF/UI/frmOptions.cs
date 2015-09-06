@@ -4,6 +4,7 @@ using Kode.Interfaces;
 using Kode.ConfigEditor;
 using Kode.WF.Mediators;
 using Resx = Kode.Resource.Strings.Configuration;
+using System.Drawing;
 
 namespace Kode.WF
 {
@@ -25,6 +26,8 @@ namespace Kode.WF
             mediator.Register(this.txtHdmi3);
             mediator.Register(this.txtHdmi4);
             mediator.Register(this.txtVaux);
+            mediator.Register(this.txtBackcolor);
+            mediator.Register(this.txtForecolor);
         }
 
         private void frmOptions_Load(object sender, EventArgs e)
@@ -36,6 +39,34 @@ namespace Kode.WF
         {
             mediator.SaveOptions();
             this.Close();
+
+        }
+
+        private void txtForecolor_TextChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtForecolor_DoubleClick(object sender, EventArgs e)
+        {
+            var result = cdColor.ShowDialog();
+            {
+                var color = cdColor.Color;
+                txtForecolor.Text = ColorTranslator.ToHtml(color);
+            }
+        }
+
+        private void txtBackcolor_DoubleClick(object sender, EventArgs e)
+        {
+            var result = cdBack.ShowDialog();
+            {
+                var color = cdBack.Color;
+                txtBackcolor.Text = ColorTranslator.ToHtml(color);
+            }
+        }
+
+        private void txtBackcolor_TextChanged(object sender, EventArgs e)
+        {
 
         }
     }

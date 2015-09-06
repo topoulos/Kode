@@ -45,6 +45,12 @@
             this.label7 = new System.Windows.Forms.Label();
             this.txtVaux = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
+            this.cdColor = new System.Windows.Forms.ColorDialog();
+            this.txtForecolor = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtBackcolor = new System.Windows.Forms.TextBox();
+            this.label10 = new System.Windows.Forms.Label();
+            this.cdBack = new System.Windows.Forms.ColorDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -100,7 +106,7 @@
             // 
             // btnSave
             // 
-            this.btnSave.Location = new System.Drawing.Point(149, 284);
+            this.btnSave.Location = new System.Drawing.Point(149, 356);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(82, 23);
             this.btnSave.TabIndex = 6;
@@ -193,11 +199,55 @@
             this.label8.TabIndex = 15;
             this.label8.Text = "V-AUX";
             // 
+            // txtForecolor
+            // 
+            this.txtForecolor.Location = new System.Drawing.Point(98, 278);
+            this.txtForecolor.Name = "txtForecolor";
+            this.txtForecolor.ReadOnly = true;
+            this.txtForecolor.Size = new System.Drawing.Size(133, 20);
+            this.txtForecolor.TabIndex = 18;
+            this.txtForecolor.Text = "textBox5";
+            this.txtForecolor.TextChanged += new System.EventHandler(this.txtForecolor_TextChanged);
+            this.txtForecolor.DoubleClick += new System.EventHandler(this.txtForecolor_DoubleClick);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(21, 281);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(70, 13);
+            this.label9.TabIndex = 17;
+            this.label9.Text = "Bar Forecolor";
+            // 
+            // txtBackcolor
+            // 
+            this.txtBackcolor.Location = new System.Drawing.Point(98, 304);
+            this.txtBackcolor.Name = "txtBackcolor";
+            this.txtBackcolor.ReadOnly = true;
+            this.txtBackcolor.Size = new System.Drawing.Size(133, 20);
+            this.txtBackcolor.TabIndex = 20;
+            this.txtBackcolor.Text = "textBox5";
+            this.txtBackcolor.TextChanged += new System.EventHandler(this.txtBackcolor_TextChanged);
+            this.txtBackcolor.DoubleClick += new System.EventHandler(this.txtBackcolor_DoubleClick);
+            // 
+            // label10
+            // 
+            this.label10.AutoSize = true;
+            this.label10.Location = new System.Drawing.Point(21, 307);
+            this.label10.Name = "label10";
+            this.label10.Size = new System.Drawing.Size(74, 13);
+            this.label10.TabIndex = 19;
+            this.label10.Text = "Bar Backcolor";
+            // 
             // frmOptions
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(284, 347);
+            this.ClientSize = new System.Drawing.Size(284, 391);
+            this.Controls.Add(this.txtBackcolor);
+            this.Controls.Add(this.label10);
+            this.Controls.Add(this.txtForecolor);
+            this.Controls.Add(this.label9);
             this.Controls.Add(this.txtVaux);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.txtHdmi4);
@@ -217,6 +267,7 @@
             this.Controls.Add(this.label1);
             this.Name = "frmOptions";
             this.Text = "Options";
+            this.TopMost = true;
             this.Load += new System.EventHandler(this.frmOptions_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -242,5 +293,11 @@
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.TextBox txtVaux;
         private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.ColorDialog cdColor;
+        private System.Windows.Forms.TextBox txtForecolor;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtBackcolor;
+        private System.Windows.Forms.Label label10;
+        private System.Windows.Forms.ColorDialog cdBack;
     }
 }

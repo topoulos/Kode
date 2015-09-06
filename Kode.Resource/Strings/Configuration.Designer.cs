@@ -61,6 +61,24 @@ namespace Kode.Resource.Strings {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to BarBackColor.
+        /// </summary>
+        public static string BarBackColorKey {
+            get {
+                return ResourceManager.GetString("BarBackColorKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to BarForeColor.
+        /// </summary>
+        public static string BarForeColorKey {
+            get {
+                return ResourceManager.GetString("BarForeColorKey", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to btnHdmi1.
         /// </summary>
         public static string btnHdmi1Name {
@@ -219,6 +237,24 @@ namespace Kode.Resource.Strings {
         public static string tbYamahaVolumeName {
             get {
                 return ResourceManager.GetString("tbYamahaVolumeName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to txtBackcolor.
+        /// </summary>
+        public static string txtBarBackColorName {
+            get {
+                return ResourceManager.GetString("txtBarBackColorName", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to txtForecolor.
+        /// </summary>
+        public static string txtBarForColorName {
+            get {
+                return ResourceManager.GetString("txtBarForColorName", resourceCulture);
             }
         }
         

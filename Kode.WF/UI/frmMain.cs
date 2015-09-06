@@ -7,6 +7,7 @@ using Kode.WF.Mediators;
 using Kode.KodiClient.Configuration;
 using Kode.ConfigEditor;
 using Resx = Kode.Resource.Strings.Configuration;
+using System.Drawing;
 
 namespace Kode.WF
 {
@@ -31,6 +32,8 @@ namespace Kode.WF
             mediator           = new Mediator(kodi, avReceiver, iniReader);
 
             RegisterButtons();
+
+            mediator.SetStripColors();
         }
 
         private void RegisterButtons()
@@ -45,6 +48,9 @@ namespace Kode.WF
             mediator.Register(btnVaux);
             mediator.Register(btnYamahaPower);
             mediator.Register(btnPlayPause);
+            mediator.Register(tsMain);
+            mediator.Register(tsSpaceLabel);
+            mediator.Register(this);
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -52,9 +58,9 @@ namespace Kode.WF
             tbKodiVolume.Value = mediator.GetKodiVolumeLevel();
             tbYamahaVolume.Value = mediator.GetYamahaVolumeLevel();
             lblYamahaVolume.Text = tbYamahaVolume.Value.ToString();
-
             mediator.SetInputLabels();
             mediator.SetInitialPowerColor();
+            this.TopMost = true;
         }
 
         private void btnUp_Click(object sender, EventArgs e)
@@ -102,6 +108,7 @@ namespace Kode.WF
             var frmOptions = new frmOptions();
             frmOptions.ShowDialog();
             mediator.SetInputLabels();
+            mediator.SetStripColors();
             this.Refresh();
         }
 
@@ -155,6 +162,65 @@ namespace Kode.WF
         private void btnPlayPause_Click(object sender, EventArgs e)
         {
             mediator.KodiPlayPause();
+        }
+
+        private void frmMain_DoubleClick(object sender, EventArgs e)
+        {
+
+        }
+
+        private void toolStripButton2_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            ResizeForm();
+        }
+
+        private void ResizeForm()
+        {
+            if (this.Height > 300)
+            {
+                this.Height = 24;
+            }
+            else
+            {
+                this.Height = 348;
+            }
+        }
+
+        private void toolStripLabel2_Click(object sender, EventArgs e)
+        {
+            ResizeForm();
+        }
+
+        private void toolStripButton3_Click(object sender, EventArgs e)
+        {
+            ToggleMoveable();
+        }
+
+        private void ToggleMoveable()
+        {
+            this.FormBorderStyle = (this.FormBorderStyle == FormBorderStyle.None)
+                  ? FormBorderStyle.Fixed3D
+                  : FormBorderStyle.None;
+        }
+
+        private void btnPlayPause_Click_1(object sender, EventArgs e)
+        {
+            mediator.KodiPlayPause();
+        }
+
+        private void tbKodiVolume_Scroll(object sender, EventArgs e)
+        {
+            mediator.SetKodiVolumeLevel(tbKodiVolume.Value);
+        }
+
+        private void panel1_Paint(object sender, PaintEventArgs e)
+        {
+
         }
     }
 }

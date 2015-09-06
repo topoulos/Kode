@@ -1,5 +1,6 @@
 ﻿using Kode.Interfaces;
 using System;
+using System.Drawing;
 using System.Windows.Forms;
 using Resx = Kode.Resource.Strings.Configuration;
 
@@ -11,7 +12,7 @@ namespace Kode.WF.Mediators
         private IAVReceiver avReceiver;
         private TrackBar tbKodiVolume;
         private TrackBar tbYamahaVolume;
-
+        private ToolStrip tsMain;
         private Label lblYamahaVolume;
         private Button btnHdmi1;
         private Button btnHdmi2;
@@ -21,6 +22,8 @@ namespace Kode.WF.Mediators
         private Button btnPlayPause;
         private Button btnYamahaPower;
         private IIniReader iniReader;
+        private frmMain frmMain;
+        private ToolStripLabel tsLabelSpacer;
 
         public Mediator(IKodi kodi, IAVReceiver avReceiver, IIniReader iniReader)
         {
@@ -28,7 +31,10 @@ namespace Kode.WF.Mediators
             this.avReceiver = avReceiver;
             this.iniReader = iniReader;
         }
-
+        public void Register(ToolStrip ts)
+        {
+            tsMain = ts;
+        }
         public void Register(Button btn)
         {
             if (btn.Name == Resx.btnHdmi1Name)
@@ -60,7 +66,14 @@ namespace Kode.WF.Mediators
                 btnPlayPause = btn;
             }
         }
-
+        public void Register(ToolStripLabel lbl)
+        {
+            this.tsLabelSpacer = lbl;
+        }
+        public void Register(frmMain frm)
+        {
+            this.frmMain = frm;
+        }
         public void Register(TrackBar tb)
         {
             if (tb.Name == Resx.tbKodiVolumeName)
@@ -93,7 +106,20 @@ namespace Kode.WF.Mediators
         {
             kodi.Left();
         }
+        public void SetStripColors()
+        {
+            var toolStripBackColor = ColorTranslator.FromHtml(
+                iniReader.GetString(Resx.ConfigurationSectionName, Resx.BarBackColorKey));
+            var toolStripForeColor = ColorTranslator.FromHtml(
+                iniReader.GetString(Resx.ConfigurationSectionName, Resx.BarForeColorKey));
 
+            tsMain.BackColor = toolStripBackColor;
+            tsMain.ForeColor = toolStripForeColor;
+            tsLabelSpacer.ForeColor = toolStripBackColor;
+            this.frmMain.BackColor = toolStripBackColor;
+            
+
+        }
         public void RightButtonClick()
         {
             kodi.Right();
