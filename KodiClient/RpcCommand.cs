@@ -22,12 +22,20 @@ namespace Kode.KodiClient
                 client.DefaultRequestHeaders.Accept.Clear();
                 client.DefaultRequestHeaders.Accept.Add(new MediaTypeWithQualityHeaderValue("application/json"));
 
-                HttpResponseMessage response = client.GetAsync(command).Result;
-                if (response.IsSuccessStatusCode)
+                try
                 {
-                    VolumeReturnMessage = response.Content.ReadAsAsync<VolumeReturnEnvelope>().Result;
+                    HttpResponseMessage response = client.GetAsync(command).Result;
+                    if (response.IsSuccessStatusCode)
+                    {
+                        VolumeReturnMessage = response.Content.ReadAsAsync<VolumeReturnEnvelope>().Result;
+                    }
+
                 }
-            }
+                catch (Exception ex)
+                {
+
+                    System.Diagnostics.Debug.Print(ex.Message);
+                }            }
         }
     }
 }
